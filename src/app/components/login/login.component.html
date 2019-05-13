@@ -1,0 +1,8 @@
+<form>
+  <h2>Bienvenido</h2>
+  <label for="inputEmail">Usuario</label>
+  <input name="user" [(ngModel)]="usuario.usuario" type="text" placeholder="Usuario" required autofocus>
+  <label for="inputPassword">Contraseña</label>
+  <input name="password" [(ngModel)]="usuario.clave" (keyup.enter)="validarLogin()" type="password" placeholder="Contraseña" required>
+  <button (clcik)="validarLogin()" type="button">ACEPTAR</button>
+</form>
