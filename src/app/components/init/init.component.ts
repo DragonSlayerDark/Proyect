@@ -14,12 +14,13 @@ export class InitComponent implements OnInit {
     private loginService: LoginService,
     private router: Router
   ) {
-    if (this.loginService.getUsuario('users')) {
+    if (!this.loginService.getUsuario('users')) {
       this.router.navigate(['/login']);
     }
   }
 
   ngOnInit() {
+    console.log(this.loginService.getUsuario('users'));
   }
 
 }

@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { FormsModule } from '@angular/forms';
 
+import { ROUTES } from './app.routes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { InitComponent } from './components/init/init.component';
+import { RouterModule } from '@angular/router';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -21,6 +23,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
     SocketIoModule.forRoot(config),
     FormsModule
     ],
